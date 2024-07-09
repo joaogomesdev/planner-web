@@ -14,7 +14,9 @@ export function App() {
   const [isGuestsInputOpen, setIsGuestsInputOpen] = useState(false)
   const [isGuestsModalOpen, setIsGuestsModalOpen] = useState(false)
 
-  const [emailsToInvite, setEmailsToInvite] = useState<string[]>([])
+  const [emailsToInvite, setEmailsToInvite] = useState<string[]>([
+    'deleteme@mail.com',
+  ])
 
   function toggleGuestsInput() {
     setIsGuestsInputOpen(!isGuestsInputOpen)
@@ -135,7 +137,9 @@ export function App() {
           <div className='w-[640px] rounded-xl py-5 px-6 shadow-shape bg-zinc-900 gap-20 space-y-5'>
             <div className='space-y-5'>
               <div className='flex items-center justify-between'>
-                <h2 className='text-lg font-semibold'>Select guests</h2>
+                <h2 className='text-lg font-semibold'>
+                  Select guests to invite
+                </h2>
                 <button onClick={toggleGuestsModal}>
                   <X className='size-5 text-zinc-400 hover:text-zinc-300 transition-colors' />
                 </button>
@@ -174,16 +178,15 @@ export function App() {
                   <input
                     type='email'
                     name='email'
-                    placeholder='Guest e-mail'
+                    placeholder='Guest`s e-mail'
                     className='bg-transparent text-lg placeholder-zinc-400 flex-1 outline-none'
                   />
                 </div>
 
                 <button
                   type='submit'
-                  className='bg-lime-300 rounded-lg py-2 px-5 text-lime-950 font-medium flex items-center gap-2 hover:bg-lime-400 transition-colors'
+                  className='bg-lime-300 rounded-lg p-2 text-lime-950 font-medium flex items-center gap-2 hover:bg-lime-400 transition-colors'
                 >
-                  Invite
                   <Plus className='size-5 text-lime-950' />
                 </button>
               </form>
